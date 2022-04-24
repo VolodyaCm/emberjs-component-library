@@ -1,3 +1,11 @@
+# Icons
+https://materialdesignicons.com/
+
+# Tailwindcss
+https://www.mylittletechlife.com/setting-up-tailwindcss-with-ember-in-2020
+
+https://dev.to/asasmith/using-tailwind-css-v3-with-ember-js-37j9
+
 # quick
 
 This README outlines the details of collaborating on this Ember application.

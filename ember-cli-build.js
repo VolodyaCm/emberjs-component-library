@@ -5,7 +5,17 @@ module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
+        extension: 'scss',
+        enabled: true,
+        parser: require('postcss-scss'),
+        cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
         plugins: [
+          {
+            module: require('@csstools/postcss-sass'),
+            options: {
+              includePaths: ['node_modules/tachyons-sass'],
+            },
+          },
           {
             module: require('autoprefixer'),
             options: {},

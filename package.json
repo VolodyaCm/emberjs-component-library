@@ -23,10 +23,13 @@
     "test:ember": "ember test"
   },
   "devDependencies": {
+    "@csstools/postcss-sass": "^5.0.1",
     "@ember/optional-features": "^2.0.0",
+    "@ember/render-modifiers": "^2.0.4",
     "@ember/test-helpers": "^2.2.0",
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
+    "@mdi/svg": "^6.6.96",
     "autoprefixer": "^10.4.4",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
@@ -45,6 +48,8 @@
     "ember-fetch": "^8.0.4",
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-mdi": "^1.0.0",
+    "ember-modifier": "^3.2.7",
     "ember-page-title": "^6.2.1",
     "ember-qunit": "^5.1.2",
     "ember-resolver": "^8.0.2",
@@ -62,6 +67,7 @@
     "prettier": "^2.2.1",
     "qunit": "^2.14.0",
     "qunit-dom": "^1.6.0",
+    "sass": "^1.50.1",
     "tailwindcss": "^3.0.24"
   },
   "engines": {
@@ -69,5 +75,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.4"
   }
 }
