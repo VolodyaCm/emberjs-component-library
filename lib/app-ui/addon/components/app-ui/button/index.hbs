@@ -1,0 +1,7 @@
+<button type="button" ...attributes class="app-ui-btn">
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    {{@title}}
+  {{/if}}
+</button>

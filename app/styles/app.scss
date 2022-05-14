@@ -1,0 +1,17 @@
+@import "tailwindcss/base.css";
+@import "tailwindcss/components.css";
+@import "tailwindcss/utilities.css";
+
+.input-checkbox-primary:checked[type=checkbox] {
+  background-image: url('/icons/check-bold.svg');
+}
+
+@layer components {
+  // .input-text-primary {
+  //   @apply bg-gray-800 text-gray-400 border-2 border-gray-900 py-1.5 px-4 rounded;
+  // }
+
+  .input-checkbox-primary {
+    @apply appearance-none h-4 w-4 border border-gray-800 rounded-sm bg-gray-600 checked:bg-gray-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left cursor-pointer;
+  }
+}

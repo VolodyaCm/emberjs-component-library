@@ -8,6 +8,7 @@ module.exports = function (defaults) {
         extension: 'scss',
         enabled: true,
         parser: require('postcss-scss'),
+        includePaths: ['app'],
         cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
         plugins: [
           {
