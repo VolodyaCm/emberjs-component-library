@@ -20,9 +20,12 @@
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "storybook": "start-storybook -p 6006 -s dist",
+    "build-storybook": "build-storybook -s dist"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.10",
     "@csstools/postcss-sass": "^5.0.1",
     "@ember/optional-features": "^2.0.0",
     "@ember/render-modifiers": "^2.0.4",
@@ -30,11 +33,23 @@
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
     "@mdi/svg": "^6.6.96",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-controls": "^6.5.5",
+    "@storybook/addon-docs": "^6.5.5",
+    "@storybook/addon-essentials": "^6.5.5",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/addon-storysource": "^6.5.4",
+    "@storybook/ember": "^6.4.22",
+    "@storybook/ember-cli-storybook": "^0.5.0",
     "autoprefixer": "^10.4.4",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-ember-modules-api-polyfill": "^3.5.0",
+    "babel-plugin-htmlbars-inline-precompile": "^5.3.1",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.10.1",
     "ember-cli": "~3.25.2",
+    "ember-cli-addon-docs-yuidoc": "^1.0.0",
     "ember-cli-app-version": "^4.0.0",
     "ember-cli-babel": "^7.23.1",
     "ember-cli-dependency-checker": "^3.2.0",
@@ -55,6 +70,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.25.1",
     "ember-template-lint": "^2.18.1",
+    "ember-truth-helpers": "^3.0.0",
     "ember-welcome-page": "^4.0.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
@@ -77,13 +93,15 @@
     "edition": "octane"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "postcss-scss": "^4.0.4"
   },
   "ember-addon": {
     "paths": [
       "lib/app-todo",
       "lib/app-ui",
-      "lib/example-addon"
+      "lib/example-addon",
+      "lib/general"
     ]
   }
 }
