@@ -1,4 +1,2 @@
-.app-ui-btn {
-  color: blue;
-  background: green !important;
-}
+@import './colors.scss';
+@import './components/button.scss';

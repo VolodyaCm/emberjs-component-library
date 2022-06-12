@@ -1,0 +1,29 @@
+{{#let
+  (hash
+    Button=(component "app-ui/dropdown/menu/item/button"
+      trigger=true
+      onClick=this.toggleDropdown
+    )
+    Trigger=(component "app-ui/dropdown/button"
+      onClick=this.toggleDropdown
+    )
+    Menu=(component "app-ui/dropdown/menu"
+      renderInPlace=@renderInPlace
+      showMenu=this.showMenu
+      nested=@nested
+    )
+    Dropdown=(component "app-ui/dropdown" nested=true)
+  ) as |components|
+}}
+  {{#if false}}
+    {{yield components}}
+  {{else}}
+    <div class={{classnames
+      "relative inline-block text-left"
+      w-full=@nested
+      border-y=(and this.showMenu @nested @renderInPlace)
+    }}>
+      {{yield components}}
+    </div>
+  {{/if}}
+{{/let}}

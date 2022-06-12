@@ -5,12 +5,7 @@ const isProduction = EmberApp.env() === 'production';
 module.exports = {
   purge: {
     enabled: isProduction,
-    content: [
-      './app/index.html',
-      './app/templates/**/*.hbs',
-      './app/components/**/*.hbs',
-      './lib/**/*.hbs',
-    ],
+    content: ['./app/index.html', './app/**/*.hbs', './lib/**/*.hbs'],
   },
   content: [],
   presets: [],

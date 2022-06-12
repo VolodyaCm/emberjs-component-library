@@ -7,6 +7,9 @@
     "before": [
       "ember-cli-postcss",
       "postcss-scss"
+    ],
+    "paths": [
+      "lib/general"
     ]
   },
   "dependencies": {

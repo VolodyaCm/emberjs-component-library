@@ -1,0 +1,13 @@
+$color-black: #111111;
+$color-white: #ffffff;
+$color-red-primary:        theme('colors.red.500');
+$color-blue-primary:       theme('colors.blue.500');
+$color-blue-primary-hover: theme('colors.blue.600');
+
+// Button
+$color-btn-primary:       $color-blue-primary;
+$color-btn-primary-hover: $color-blue-primary-hover;
+$color-btn-primary-text:  $color-white;
+$color-btn-outlined:      $color-white;
+$color-btn-outlined-text: $color-blue-primary;
+$color-btn-border-primary:$color-blue-primary;

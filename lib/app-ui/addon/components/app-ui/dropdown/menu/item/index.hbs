@@ -1,0 +1,26 @@
+{{#if @custom}}
+  {{yield}}
+{{else}}
+  {{!-- <div class="py-1" role="none"> --}}
+    <div
+      class={{classnames
+        "app-ui-dropdown__menu__item"
+        "text-gray-700 block px-4 py-2 text-sm"
+        pointer-events-none=@disabled
+        hover:pointer=(not @disabled)
+        hover:bg-gray-100=(not @disabled)
+        hover:text-gray-900=(not @disabled)
+        cursor-default=@disabled
+      }}
+      role="menuitem"
+      tabindex="-1"
+      ...attributes
+    >
+      {{#if (has-block)}}
+        {{yield}}
+      {{else}}
+        {{or @title "Option"}}
+      {{/if}}
+    </div>
+  {{!-- </div> --}}
+{{/if}}

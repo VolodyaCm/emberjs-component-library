@@ -1,0 +1,52 @@
+{{#if @showMenu}}
+  <div
+    class={{classnames
+      "app-ui-dropdown__menu"
+      "origin-top-right rounded-md"
+      "bg-white focus:outline-none w-56"
+      this.positionClassName
+
+      shadow-lg=       this.absoluteAndNotNested
+      ring-1=          this.absoluteAndNotNested
+      ring-black=      this.absoluteAndNotNested
+      ring-opacity-5=  this.absoluteAndNotNested
+
+      w-full=          this.nestedAndRenderInPlace
+
+      absolute=(not @renderInPlace)
+      divide-y=@group
+      divide-gray-100=@group
+      left-56=@nested
+      top-0=@nested
+      ml-2=(and @nested (not @renderInPlace))
+      mt-2=(not @nested)
+      mb-2=(and @renderInPlace @nested)
+    }}
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="menu-button"
+    tabindex="-1"
+  >
+    <div class="py-1" role="none">
+      {{#if (has-block)}}
+        {{yield (hash
+          Item=(component "app-ui/dropdown/menu/item")
+          Link=(component "app-ui/dropdown/menu/item/link")
+          Button=(component "app-ui/dropdown/menu/item/button")
+        )}}
+      {{else}}
+        {{#each @options as |option|}}
+          <AppUi::Dropdown::Menu::Item
+            @title={{option.title}}
+            @icon={{option.icon}}
+          />
+        {{else}}
+          <AppUi::Dropdown::Menu::Item
+            @disabled={{true}}
+            @title="No options provided!"
+          />
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+{{/if}}

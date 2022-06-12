@@ -1,5 +1,40 @@
-.app-ui-btn {
-  // @apply bg-gray-800 text-gray-400 border-2 border-gray-900 py-1.5 px-4 rounded;
-  color: blue;
-  background: red !important;
+button.app-ui-btn {
+  color:               $color-btn-primary-text;
+  background-color:    theme('colors.blue.500');
+  border-radius:       theme('borderRadius.md');
+  padding:             theme('spacing.2') theme('spacing.4');
+  font-size:           theme('fontSize.base');
+  box-sizing: border-box;
+  border-width: 1px;
+  border-color:      $color-btn-border-primary;
+
+  &:hover {
+    background-color:  $color-btn-primary-hover
+  }
+
+  &.btn--outlined {
+    background-color:  $color-btn-outlined;
+    color:             $color-btn-outlined-text;
+  }
+
+  // SIZE
+  &.btn--sm {
+    font-size: theme('fontSize.sm');
+  }
+
+  &.btn--md {
+    font-size: theme('fontSize.base');
+  }
+
+  &.btn--lg {
+    font-size: theme('fontSize.lg');
+  }
+
+  &.btn--xl {
+    font-size: theme('fontSize.xl');
+  }
+
+  &.btn--2xl {
+    font-size: theme('fontSize.2xl');
+  }
 }

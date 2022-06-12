@@ -4,7 +4,89 @@
 
 <ExampleAddon::ExampleComponent />
 
-<AppUi::Input />
-<AppUi::Button @title="Click me" />
+{{!-- <AppUi::Input /> --}}
+{{!-- <AppUi::Button @title="Click me" /> --}}
 
-<Layout />
+<div class="px-40 pb-40">
+  <AppUi::Dropdown @showMenu={{true}} as |d|>
+    <d.Trigger @title="Custom Options" />
+    <d.Menu as |M|>
+      <M.Item @title="Just option" />
+
+      <AppUi::Dropdown @nested={{true}} as |Nested|>
+        <Nested.Button @title="Group" />
+
+        <Nested.Menu as |NM|>
+
+          <AppUi::Dropdown @renderInPlace={{true}} @nested={{true}} as |Nested|>
+            <Nested.Button @title="Nested Group" />
+
+            <Nested.Menu as |NM|>
+              <NM.Button @title="Nested Item 1" />
+              <NM.Button @title="Nested Item 2" />
+              <NM.Button @title="Nested Item 3" />
+              <NM.Button @title="Nested Item 4" />
+            </Nested.Menu>
+          </AppUi::Dropdown>
+
+          <NM.Button @title="Nested Item 1" />
+          <NM.Button @title="Nested Item 2" />
+          <NM.Button @title="Nested Item 3" />
+          <NM.Button @title="Nested Item 4" />
+        </Nested.Menu>
+      </AppUi::Dropdown>
+
+      {{!-- <M.Button as |Button|>
+        <Button @title="Button" />
+      </M.Button> --}}
+
+      <M.Button @title="Button 1" />
+
+      {{!-- <M.Link @route="application" as |Item|>
+        <Item @title="Link | Go to application" />
+      </M.Link>
+
+      <M.Link @route="test" as |Item|>
+        <Item @title="Link | Go to test" />
+      </M.Link> --}}
+    </d.Menu>
+  </AppUi::Dropdown>
+</div>
+
+<div class="px-40 pb-40">
+  <AppUi::Dropdown as |d|>
+    <d.Button />
+    <d.Menu
+      @options={{array
+        (hash title="option 1")
+        (hash title="option 2")
+        (hash title="option 3")
+      }}
+    />
+  </AppUi::Dropdown>
+</div>
+
+
+<div class="px-40 pb-40">
+  <button
+    type="button"
+    class={{classnames
+      "bg-white"
+      "inline-flex justify-center w-full rounded-md border border-gray-300"
+      "shadow-sm px-4 py-2 text-sm font-medium text-gray-700"
+      "hover:bg-gray-50 focus:outline-none focus:ring-2"
+      "focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+      "disabled:bg-gray-100"
+    }}
+    id="menu-button"
+    aria-expanded="true"
+    aria-haspopup="true"
+  >
+    Button
+  </button>
+  <AppUi::Button @title="Small" class="btn--sm" />
+  <AppUi::Button @title="Middle" class="btn--md" />
+  <AppUi::Button @title="Large" class="btn--lg" />
+  <AppUi::Button @title="Extra Large" class="btn--xl" />
+  <AppUi::Button @title="2 Extra Large" class="btn--2xl" />
+</div>
